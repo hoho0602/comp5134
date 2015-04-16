@@ -14,7 +14,8 @@ public class SimpleTestSuite extends TestSuite{
 		suite.addTestSuite(TestFlavoredIceCream.class);
 		suite.addTestSuite(TestIceCreamDecorator.class);
 		suite.addTestSuite(TestIceCream.class);
-
+		suite.addTestSuite(TestUtil.class);
+		
 
 		return suite;
 		}

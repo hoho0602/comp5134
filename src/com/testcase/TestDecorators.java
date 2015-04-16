@@ -13,16 +13,11 @@ import com.domain.Decorator;
 import com.domain.Decorators;
 import com.domain.Flavor;
 import com.domain.FlavoredIceCream;
+import com.util.Utilities;
 
 public class TestDecorators extends TestCase{
 
-	public static double round(double value, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
-
-	    BigDecimal bd = new BigDecimal(value);
-	    bd = bd.setScale(places, RoundingMode.HALF_UP);
-	    return bd.doubleValue();
-	}
+	private Utilities util = Utilities.getInstance();
 	@Test
 	public void test() {
 		Flavor a = new Flavor("11", 1.2);
@@ -35,7 +30,7 @@ public class TestDecorators extends TestCase{
 		Decorator d = new Decorator("33", 6.1);
 		test = new Decorators(b, d);
 		assertEquals("11Ice Cream with 22 with 33", test.getDescription());
-		assertEquals(10.4, round(test.cost(),1));
+		assertEquals(10.4, util.round(test.cost(),1));
 		//fail("Not yet implemented");
 		
 		Decorators.addDecorator("aa", 1.3);
@@ -45,7 +40,7 @@ public class TestDecorators extends TestCase{
 		FlavoredIceCream bb = new FlavoredIceCream(aa);
 		test = new Decorators(bb);
 		assertEquals("aaIce Cream with 22 with 33", test.getDescription());
-		assertEquals(10.5, round(test.cost(),1));
+		assertEquals(10.5, util.round(test.cost(),1));
 		
 		Flavor aaa = new Flavor("aaa", 1.2);
 		FlavoredIceCream bbb = new FlavoredIceCream(aaa);

@@ -83,7 +83,7 @@ public class ICE_CREAM_POS {
 		    
 		    
 		 window = new MainWindow();
-		SystemAdministratorButton sysAdm = new SystemAdministratorButton("sys");
+		SystemAdministratorButton sysAdm = new SystemAdministratorButton("System Administrator");
 		//sysAdm.setBounds(0, 50 , 100, 100);
 		
 		window.pan4.add(sysAdm);
@@ -96,7 +96,7 @@ public class ICE_CREAM_POS {
 		
 		
 		JMenuItem item1, item2;
-		item1 = new JMenuItem("Add flvor");
+		item1 = new JMenuItem("Add flavor");
         item2 = new JMenuItem("Add Decorator");
         popupmenu.add(item1);
         popupmenu.addSeparator();
